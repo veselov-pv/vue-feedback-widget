@@ -1,12 +1,14 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="p-fluid">
+      <!-- Name input -->
       <div class="p-field">
         <label for="name">Name</label>
         <InputText id="name" v-model="form.name" />
         <div v-if="v.name.$error" class="p-error">Name is required.</div>
       </div>
 
+      <!-- Email input -->
       <div class="p-field">
         <label for="email">Email</label>
         <InputText id="email" v-model="form.email" type="email" />
@@ -20,6 +22,7 @@
         </div>
       </div>
 
+      <!-- Phone input -->
       <div class="p-field">
         <label for="phone">Phone</label>
         <InputMask
@@ -44,6 +47,7 @@
         </div>
       </div>
 
+      <!-- Rating input -->
       <div class="p-field">
         <label for="rating">Product rating</label>
         <InputNumber
@@ -65,12 +69,14 @@
         </div>
       </div>
 
+      <!-- Review input -->
       <div class="p-field">
         <label for="review">Review</label>
         <InputTextarea id="review" v-model="form.review" rows="5" />
         <div v-if="v.review.$error" class="p-error">Review is required.</div>
       </div>
 
+      <!-- Submit button -->
       <Button
         class="submit-btn"
         type="submit"
