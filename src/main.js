@@ -1,24 +1,16 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from "vue";
+import "./style.css";
+import App from "./App.vue";
+import store from "./store";
 
 // PrimeVue imports
-import 'primevue/resources/themes/md-light-indigo/theme.css'
-import PrimeVue from 'primevue/config'
-import InputText from 'primevue/inputtext'
-import InputMask from 'primevue/inputmask'
-import InputNumber from 'primevue/inputnumber'
-import InputTextarea from 'primevue/textarea'
-import Button from 'primevue/button'
+import "primevue/resources/themes/md-light-indigo/theme.css";
+import "primeicons/primeicons.css";
+import PrimeVue from "primevue/config";
 
 const app = createApp(App);
 
+app.use(store);
 app.use(PrimeVue, { ripple: true });
 
-app.component('InputText', InputText)
-app.component('InputMask', InputMask)
-app.component('InputNumber', InputNumber)
-app.component('InputTextarea', InputTextarea)
-app.component('Button', Button)
-
-app.mount('#app');
+app.mount("#app");
