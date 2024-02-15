@@ -52,9 +52,12 @@
         <label for="rating">Product rating</label>
         <InputNumber
           id="rating"
+          class="input-number"
           v-model="form.rating"
           :min="1"
-          :aria-multiselectable="5"
+          :max="5"
+          mode="decimal"
+          showButtons
         />
         <div v-if="v.rating.$error">
           <div v-if="v.rating.required.$invalid" class="p-error">
@@ -229,7 +232,9 @@ export default {
   margin-bottom: 20px;
 }
 
-.submit-btn {
+/* primevue button styles fix for ligth theme */
+.submit-btn,
+.input-number :deep(.p-button) {
   background-color: green;
 }
 </style>

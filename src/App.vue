@@ -1,7 +1,9 @@
 <template>
-  <Header />
-  <Form />
-  <Messages />
+  <div class="app-wrapper">
+    <Header />
+    <Form />
+    <Messages />
+  </div>
 </template>
 
 <script setup>
@@ -11,4 +13,9 @@ import Messages from "./components/Messages.vue";
 </script>
 
 <style scoped>
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>
